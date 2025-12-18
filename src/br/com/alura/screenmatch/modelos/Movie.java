@@ -16,6 +16,10 @@ public class Movie extends Titulo implements Classificavel {
     @Override
     public int getClassificacao() {
         // se pegaMedia() retorna double e você quer dividir por 2 e então truncar:
-        return (int) (pegaMedia() / 2);
+        return (int) (pegaMedia() / 2);}
+
+        @Override
+                public String toString() {
+            return "Filme: " + this.getName() + "(" + this.getAnoDeLancamento() + ")");
+        }
     }
-}
