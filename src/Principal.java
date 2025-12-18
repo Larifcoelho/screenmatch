@@ -4,6 +4,8 @@ import br.com.alura.screenmatch.modelos.Episodio;
 import br.com.alura.screenmatch.modelos.Movie;
 import br.com.alura.screenmatch.modelos.Serie;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
         Movie meuFilme = new Movie();
@@ -51,7 +53,23 @@ public class Principal {
         episodio.setSerie((lost));
         episodio.setTotalVisualizacoes(300);
         filtro.filtra(episodio);
+
+        var filmeDaLari = new Movie();
+        filmeDaLari.setDuracaoEmMinutos(200);
+        filmeDaLari.setName(" Boo, Bitch ");
+        filmeDaLari.setAnoDeLancamento(2022);
+        filmeDaLari.avalia(10);
+
+        ArrayList<Movie> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(filmeDaLari);
+        listaDeFilmes.add(meuFilme);
+        listaDeFilmes.add(outroFilme);
+        System.out.println("Tamanho da lista: " + listaDeFilmes.size());
+        System.out.println("Primeiro filme " + listaDeFilmes.get(0).getName());
+        System.out.println(listaDeFilmes);
+
     }
+
 
 
 
