@@ -8,9 +8,8 @@ import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
-        Movie meuFilme = new Movie();
-        meuFilme.setName( "LariLand");
-        meuFilme.setAnoDeLancamento(2025);
+        Movie meuFilme = new Movie("LariLand", 2025);
+        //meuFilme.setName( "LariLand");
         meuFilme.setDuracaoEmMinutos (180);
         System.out.println("Duração do filme: " + meuFilme.getDuracaoEmMinutos());
 
@@ -24,8 +23,8 @@ public class Principal {
         // meuFilme.totalDeAvaliacoes= 1;
         System.out.println(meuFilme.pegaMedia());
 
-        Serie lost = new Serie();
-        lost.setName("Lost");
+        Serie lost = new Serie("Lost", 2000);
+        //lost.setName("Lost");
         lost.setAnoDeLancamento(2000);
         lost.exibeFichaTecnica();
         lost.setTemporadas(10);
@@ -33,9 +32,8 @@ public class Principal {
         lost.setMinutosPorEpisodio(50);
         System.out.println("Duração para maratonar Lost: " + lost.getDuracaoEmMinutos());
 
-        Movie outroFilme = new Movie();
-        outroFilme.setName( "Nerve");
-        outroFilme.setAnoDeLancamento(2014);
+        Movie outroFilme = new Movie("Nerve", 2014);
+        //outroFilme.setName( "Nerve");
         outroFilme.setDuracaoEmMinutos (200);
 
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
@@ -54,10 +52,9 @@ public class Principal {
         episodio.setTotalVisualizacoes(300);
         filtro.filtra(episodio);
 
-        var filmeDaLari = new Movie();
+        var filmeDaLari = new Movie("Boo, Bitch", 2022);
         filmeDaLari.setDuracaoEmMinutos(200);
-        filmeDaLari.setName(" Boo, Bitch ");
-        filmeDaLari.setAnoDeLancamento(2022);
+        //filmeDaLari.setName(" Boo, Bitch ");
         filmeDaLari.avalia(10);
 
         ArrayList<Movie> listaDeFilmes = new ArrayList<>();
@@ -68,7 +65,10 @@ public class Principal {
         System.out.println("Primeiro filme " + listaDeFilmes.get(0).getName());
         System.out.println(listaDeFilmes);
         System.out.println("toString do filme " + listaDeFilmes.get(0).toString() );
+
+
     }
+
 
 
 

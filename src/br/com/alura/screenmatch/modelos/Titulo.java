@@ -6,10 +6,16 @@ public class Titulo {
         private int anoDeLancamento;
         private boolean incluidoNoPlano;
         private double somaAvaliacoes;
-        private int TotalDeAvaliacoes;
+        private int totalDeAvaliacoes;
         private int duracaoEmMinutos;
 
-        public boolean isIncluidoNoPlano() {
+
+    public Titulo(String name, int anoDeLancamento) {
+        this.name = name;
+        this.anoDeLancamento = anoDeLancamento;
+    }
+
+    public boolean isIncluidoNoPlano() {
             return incluidoNoPlano;
         }
 
@@ -26,7 +32,7 @@ public class Titulo {
         }
 
         public int getTotalDeAvaliacoes(){
-            return TotalDeAvaliacoes;
+            return totalDeAvaliacoes;
         }
 
         public void setName(String name) {
@@ -52,11 +58,11 @@ public class Titulo {
 
         public void avalia(double nota){
             somaAvaliacoes += nota;
-            TotalDeAvaliacoes ++;
+            totalDeAvaliacoes++;
         }
 
         public double pegaMedia(){
-            return somaAvaliacoes / TotalDeAvaliacoes;
+            return somaAvaliacoes / totalDeAvaliacoes;
         }
     }
 
