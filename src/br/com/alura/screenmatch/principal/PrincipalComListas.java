@@ -5,22 +5,43 @@ import br.com.alura.screenmatch.modelos.Serie;
 import br.com.alura.screenmatch.modelos.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
 
         Movie meuFilme = new Movie("LariLand", 2025);
-    Serie lost = new Serie("Lost", 2000);
-    Movie outroFilme = new Movie("Nerve", 2014);
-    var filmeDaLari = new Movie("Boo, Bitch", 2022);
+        meuFilme.avalia(10);
+        Movie outroFilme = new Movie("Nerve", 2014);
+        outroFilme.avalia(9);
+        var filmeDaLari = new Movie("Boo, Bitch", 2022);
+        filmeDaLari.avalia(6);
+        Serie lost = new Serie("Lost", 2000);
 
-    ArrayList<Titulo> lista = new ArrayList<>();
+        ArrayList<Titulo> lista = new ArrayList<>();
         lista.add(filmeDaLari);
         lista.add(meuFilme);
         lista.add(outroFilme);
         lista.add(lost);
         for (Titulo item : lista) {
-            System.out.println(item);
+            System.out.println(item.getName());
+            if (item instanceof Movie filme && filme.getClassificacao() > 2 ) {
+                System.out.println("Classificação em estrelas " + filme.getClassificacao());
+
+            }
+        }
+        ArrayList<String> buscaPorArtistas = new ArrayList<>();
+        buscaPorArtistas.add("Adam Sandler");
+        buscaPorArtistas.add("Selena Gomez");
+        buscaPorArtistas.add("Marina Ruy Barbosa");
+        buscaPorArtistas.add("Cauã Reymond");
+        System.out.println(buscaPorArtistas);
+
+        Collections.sort(buscaPorArtistas);
+        System.out.println("Depois da ordenação");
+        System.out.println(buscaPorArtistas);
+
+        Collections.sort(lista);
+    }
 }
-    }
-    }
