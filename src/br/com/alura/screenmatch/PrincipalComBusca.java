@@ -19,6 +19,7 @@ public class PrincipalComBusca {
         var busca = scan.nextLine();
 
         String endereco = "http://www.omdbapi.com/?t=" + busca + "&apikey=4c50b3e";
+
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(endereco))
@@ -27,10 +28,7 @@ public class PrincipalComBusca {
                 .send(request, HttpResponse.BodyHandlers.ofString());
 
     String json = response.body();
-        System.out.println(json);
-        Gson gson = new Gson();
-        Titulo meuTitulo = gson.fromJson(json, Titulo.class);
-        System.out.println(meuTitulo);
+
     }
 
 }
